@@ -1,1 +1,170 @@
+@import url("https://cdn.jsdelivr.net/gh/toss/toss-product-sans@v1/dist/toss-product-sans.css");
 @import "tailwindcss";
+
+@theme {
+    /* Font */
+    --font-sans: "Toss Product Sans", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+
+    /* Brand Colors (Replaces old Primary/Accent) */
+    --color-brand-blue: #86B3DB;
+    --color-brand-indigo: #2d5a87;
+    --color-brand-bg: #F8F9FF;
+
+    /* Primary - Soft Serenity Blue (Eye-friendly) */
+    --color-primary-50: #F0F7FF;
+    --color-primary-100: #E0EFFF;
+    --color-primary-200: #BADFFF;
+    --color-primary-300: #7CBFFF;
+    --color-primary-400: #569DFF;
+    --color-primary-500: #3B82F6;
+    --color-primary-600: #2563EB;
+    --color-primary-700: #1D4ED8;
+    --color-primary-800: #1E40AF;
+    --color-primary-900: #1E3A8A;
+
+    /* Accent - Calm Indigo */
+    --color-accent-400: #818CF8;
+    --color-accent-500: #6366F1;
+    --color-accent-600: #4F46E5;
+
+    /* Neutral - Soft Slate */
+    --color-slate-50: #F8FAFC;
+    --color-slate-100: #F1F5F9;
+    --color-slate-200: #E2E8F0;
+    --color-slate-300: #CBD5E1;
+    --color-slate-400: #94A3B8;
+    --color-slate-500: #64748B;
+    --color-slate-600: #475569;
+    --color-slate-700: #334155;
+    --color-slate-800: #1E293B;
+    --color-slate-900: #0F172A;
+
+    /* Success/Warning/Error */
+    --color-success-500: #10B981;
+    --color-warning-500: #F59E0B;
+    --color-error-500: #EF4444;
+}
+
+/* Custom animations */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-150%) skewX(-20deg);
+    }
+
+    100% {
+        transform: translateX(150%) skewX(-20deg);
+    }
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fade-up-stagger {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-fade-up {
+    animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+.animate-float {
+    animation: float 3s ease-in-out infinite;
+}
+
+.animate-shine {
+    animation: shine 1.5s infinite;
+}
+
+.animate-fade-in {
+    animation: fade-in 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-fade-up-stagger {
+    animation: fade-up-stagger 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glass morphism utility */
+.glass {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+/* Gradient text utility */
+.gradient-text {
+    background: linear-gradient(135deg, #0EA5E9 0%, #3B82F6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Card styles */
+.card {
+    background: white;
+    border-radius: 1rem;
+    border: 2px solid #E2E8F0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+    border-color: #BAE6FD;
+    box-shadow: 0 10px 40px -10px rgba(14, 165, 233, 0.15);
+}

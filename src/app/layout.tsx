@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/shared/components/layout/Navbar";
+import { Footer } from "@/shared/components/layout/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "KATHENA | 경기대학교 중앙 게임 동아리",
-  description: "KATHENA - 경기대학교 중앙 게임 동아리 공식 웹사이트",
-  keywords: ["경기대학교", "게임동아리", "KATHENA", "카테나", "e스포츠"],
+  title: "KATHENA | 경기대학교 게임 동아리",
+  description: "경기대학교 중앙 게임 동아리 KATHENA - 함께 플레이하고, 함께 성장합니다",
 };
 
 export default function RootLayout({
@@ -25,10 +26,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
